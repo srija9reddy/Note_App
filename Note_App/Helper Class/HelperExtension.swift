@@ -13,6 +13,32 @@ extension UIViewController{
             return Int(since1970 * 1000)
         }
     
+    func utcToLocal(dateStr: String) -> String? {
+        let dateFormatter = DateFormatter()
+        //07/21/2021 01:36:31
+        //2021-09-23 10:16:23 +0000
+        dateFormatter.dateFormat =  "yyyy-MM-dd HH:mm:ss Z"
+        //dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:s"
+        //2021-07-29 21:43:28
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        if let date = dateFormatter.date(from: dateStr) {
+            dateFormatter.timeZone = TimeZone.current
+            dateFormatter.dateFormat = "MMM d, yyyy hh:mm:a"
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
+    
+    func loadDate(ms: Int) -> String{
+        let milisecond = ms
+        let dateVar = Date.init(timeIntervalSinceNow: TimeInterval(milisecond)/1000)
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm"
+        let datee = dateFormatter.string(from: dateVar)
+        print(dateFormatter.string(from: dateVar))
+        return datee
+    }
     func saveData(input : [String:Any]) -> Bool{
 //        let noteName = input["name"]
 //        let noteImages : [UIImage] = input["images"] as! [UIImage]

@@ -43,7 +43,8 @@ class HomeVc: UIViewController {
     }
     
     func loadData(){
-       print( self.readAllData())
+        self.allData = self.readAllData()
+        self.notesList_TableView.reloadData()
     }
 }
 
@@ -57,6 +58,18 @@ extension HomeVc : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableCell") as! HomeTableCell
+        let value = allData[indexPath.row]
+        //        let noteName = input["name"]
+        //        let noteImages : [UIImage] = input["images"] as! [UIImage]
+        //        let noteDescription = input["description"]
+        //        let category = input["category"]
+        //        let audioPath = input["audioPath"]
+        cell.noteLabel.text = value["name"] as? String ?? "note title"
+        cell.noteDescriptionLabel.text = value["description"] as? String ?? "description"
+        let newDate = Date(timeIntervalSince1970: (Double((value["time"] as? Int ?? 0)) / 1000.0))
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        cell.noteUploadedLabel.text = self.utcToLocal(dateStr: df.string(from: newDate))
         return cell
     }
     
