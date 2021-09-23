@@ -6,6 +6,7 @@
 
 import UIKit
 import AVFAudio
+import CoreLocation
 
 class AddNoteVc: UIViewController {
     //MARK:- IBOUTLETS
@@ -24,7 +25,9 @@ class AddNoteVc: UIViewController {
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
     var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
-        
+    var locationManager: CLLocationManager!
+    
+    
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +58,7 @@ class AddNoteVc: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.categoryDropDown.optionArray = categoryArray
+        self.determineMyCurrentLocation()
     }
     
     //MARK:- IBACTIONS
@@ -189,5 +193,39 @@ extension AddNoteVc :  AVAudioRecorderDelegate{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         print(paths[0], "recording path")
         return paths[0]
+    }
+}
+
+
+extension AddNoteVc : CLLocationManagerDelegate{
+    
+    func determineMyCurrentLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+            //locationManager.startUpdatingHeading()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+
+       // manager.stopUpdatingLocation()
+
+        print("user latitude = \(userLocation.coordinate.latitude)")
+        print("user longitude = \(userLocation.coordinate.longitude)")
+        
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("Error \(error)")
     }
 }
