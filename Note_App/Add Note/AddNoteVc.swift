@@ -23,7 +23,8 @@ class AddNoteVc: UIViewController {
     var imgArray = [UIImage]()
     var recordingSession: AVAudioSession!
     var audioRecorder: AVAudioRecorder!
-    
+    var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
+        
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,6 @@ class AddNoteVc: UIViewController {
                         loadRecordingUI()
                         print("recording permission allowed")
                     } else {
-                                                
                         print("failed to record!")
                     }
                 }
@@ -50,6 +50,11 @@ class AddNoteVc: UIViewController {
         } catch {
             // failed to record!
         }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.categoryDropDown.optionArray = categoryArray
     }
     
     //MARK:- IBACTIONS
