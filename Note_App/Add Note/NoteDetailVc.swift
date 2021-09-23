@@ -7,22 +7,29 @@
 import UIKit
 
 class NoteDetailVc: UIViewController {
-
+    
+    //MARK:- IBOUTLETS
+    @IBOutlet weak var noteTitleTF: UITextField!
+    @IBOutlet weak var categoryTF: DropDown!
+    @IBOutlet weak var imgCollectionView: UICollectionView!
+    @IBOutlet weak var playAudioBtn: UIButton!
+    @IBOutlet weak var descriptionTF: UITextView!
+    @IBOutlet weak var saveChangeBtn: UIButton!
+    
+    //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK:- IBACTIONS
+    @IBAction func playAudioAction(_ sender: UIButton) {
+        
     }
-    */
-
+    
+    @IBAction func saveChanges(_ sender: UIButton) {
+        
+    }
+    
 }
