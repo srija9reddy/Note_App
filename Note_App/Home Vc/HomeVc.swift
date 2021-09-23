@@ -15,13 +15,19 @@ class HomeVc: UIViewController {
     @IBOutlet weak var addNoteBtn: UIButton!
     @IBOutlet weak var sortBtn: UIButton!
     
+    
+    var allData = [[String:AnyObject]]()
+    
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        notesList_TableView.delegate = self
+        notesList_TableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.loadData()
+    }
     //MARK:- IBACTIONS
     @IBAction func searchBtnAction(_ sender: UIButton) {
         
@@ -35,4 +41,24 @@ class HomeVc: UIViewController {
     @IBAction func sortBtnAction(_ sender: UIButton) {
         
     }
+    
+    func loadData(){
+       print( self.readAllData())
+    }
+}
+
+
+//MARK:- TABLEVIEW DELEGATES & DATA SOURCES
+extension HomeVc : UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableCell") as! HomeTableCell
+        return cell
+    }
+    
+    
 }

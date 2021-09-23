@@ -44,6 +44,9 @@ class AddNoteVc: UIViewController {
         self.determineMyCurrentLocation()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.locationManager.stopUpdatingLocation()
+    }
     //MARK:- IBACTIONS
     @IBAction func saveBtnAction(_ sender: UIButton) {
         if self.titleTF.text?.replacingOccurrences(of: " ", with: "") == ""{
