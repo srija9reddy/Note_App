@@ -18,6 +18,7 @@
 		C92EF41126FC392500741CBC /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41026FC392500741CBC /* HomeVc.swift */; };
 		C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41326FC398100741CBC /* AnimatableView.swift */; };
 		C92EF41626FC3BAA00741CBC /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41526FC3BAA00741CBC /* HomeTableCell.swift */; };
+		C92EF41826FC3FE700741CBC /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41726FC3FE700741CBC /* iOSDropDown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C92EF41026FC392500741CBC /* HomeVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
 		C92EF41326FC398100741CBC /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableView.swift; sourceTree = "<group>"; };
 		C92EF41526FC3BAA00741CBC /* HomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		C92EF41726FC3FE700741CBC /* iOSDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		C92EF41226FC396600741CBC /* Helper Class */ = {
 			isa = PBXGroup;
 			children = (
+				C92EF41726FC3FE700741CBC /* iOSDropDown.swift */,
 				C92EF41326FC398100741CBC /* AnimatableView.swift */,
 			);
 			path = "Helper Class";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92EF3E426FC384100741CBC /* ViewController.swift in Sources */,
+				C92EF41826FC3FE700741CBC /* iOSDropDown.swift in Sources */,
 				C92EF41126FC392500741CBC /* HomeVc.swift in Sources */,
 				C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */,
 				C92EF3E026FC384100741CBC /* AppDelegate.swift in Sources */,
