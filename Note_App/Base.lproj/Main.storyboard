@@ -35,7 +35,7 @@
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="magnifyingglass" catalog="system"/>
                                                 <connections>
-                                                    <action selector="searchBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S22-GA-MC8"/>
+                                                    <action selector="searchBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v9G-Dw-lti"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -67,7 +67,7 @@
                                         <rect key="frame" x="10" y="70" width="394" height="738"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="86" id="6Aj-Pw-YVN" customClass="HomeTableCell" customModule="Note_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTableCell" rowHeight="86" id="6Aj-Pw-YVN" customClass="HomeTableCell" customModule="Note_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="24.5" width="394" height="86"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Aj-Pw-YVN" id="L3P-9n-lsW">
@@ -108,20 +108,52 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="noteDescriptionLabel" destination="3Ug-mi-A1E" id="LI3-16-9Lw"/>
-                                                    <outlet property="noteLabel" destination="8HA-ob-NjG" id="2KC-cq-Aos"/>
-                                                    <outlet property="noteUploadedLabel" destination="4kd-Jj-con" id="qdd-j9-uv7"/>
+                                                    <outlet property="noteDescriptionLabel" destination="3Ug-mi-A1E" id="1mb-gI-ZnH"/>
+                                                    <outlet property="noteLabel" destination="8HA-ob-NjG" id="tCP-uF-P0D"/>
+                                                    <outlet property="noteUploadedLabel" destination="4kd-Jj-con" id="Br5-hz-PKF"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxe-bH-cFk">
+                                        <rect key="frame" x="334" y="616" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="nmf-Bc-4DI"/>
+                                            <constraint firstAttribute="height" constant="60" id="z7q-Uc-I2g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="14"/>
+                                        <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="titleEdgeInsets" minX="-50" minY="-25" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="28" maxX="6" maxY="-10"/>
+                                        <state key="normal" title="Sort" image="sorting">
+                                            <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmv-hl-N6A">
+                                        <rect key="frame" x="334" y="706" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="igS-eL-NZP"/>
+                                            <constraint firstAttribute="height" constant="60" id="kx3-HM-Dkq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="14"/>
+                                        <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="titleEdgeInsets" minX="-47" minY="-25" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="12" minY="28" maxX="6" maxY="-10"/>
+                                        <state key="normal" title="Add Note" image="add">
+                                            <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cmv-hl-N6A" secondAttribute="trailing" constant="20" id="6SG-oF-lKi"/>
                                     <constraint firstItem="Nbq-VL-srl" firstAttribute="top" secondItem="Xkh-A4-ISb" secondAttribute="top" constant="10" id="GQk-wS-4Hj"/>
+                                    <constraint firstItem="Cmv-hl-N6A" firstAttribute="centerY" secondItem="Xkh-A4-ISb" secondAttribute="centerY" multiplier="1.8" id="SaL-ma-3os"/>
                                     <constraint firstItem="e5I-Tg-0DG" firstAttribute="top" secondItem="Nbq-VL-srl" secondAttribute="bottom" constant="10" id="VS5-f2-dQl"/>
                                     <constraint firstAttribute="trailing" secondItem="e5I-Tg-0DG" secondAttribute="trailing" constant="10" id="YwS-1E-vlC"/>
+                                    <constraint firstItem="cxe-bH-cFk" firstAttribute="centerX" secondItem="Cmv-hl-N6A" secondAttribute="centerX" id="geU-aJ-TW3"/>
                                     <constraint firstAttribute="bottom" secondItem="e5I-Tg-0DG" secondAttribute="bottom" constant="10" id="grM-i1-WD3"/>
+                                    <constraint firstItem="Cmv-hl-N6A" firstAttribute="top" secondItem="cxe-bH-cFk" secondAttribute="bottom" constant="30" id="jFr-Lo-kkE"/>
                                     <constraint firstAttribute="trailing" secondItem="Nbq-VL-srl" secondAttribute="trailing" constant="20" id="mNO-Xh-CWb"/>
                                     <constraint firstItem="Nbq-VL-srl" firstAttribute="leading" secondItem="Xkh-A4-ISb" secondAttribute="leading" constant="20" id="ohE-TF-Bjh"/>
                                     <constraint firstItem="e5I-Tg-0DG" firstAttribute="leading" secondItem="Xkh-A4-ISb" secondAttribute="leading" constant="10" id="zRh-8j-YfP"/>
@@ -138,9 +170,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="notesList_TableView" destination="e5I-Tg-0DG" id="aja-aq-qbf"/>
-                        <outlet property="searchBtn" destination="ncK-1e-JFk" id="R9N-jD-zqS"/>
-                        <outlet property="searchTF" destination="JI9-s9-XaV" id="nzu-ef-WEF"/>
+                        <outlet property="notesList_TableView" destination="e5I-Tg-0DG" id="eUp-ut-oOG"/>
+                        <outlet property="searchBtn" destination="ncK-1e-JFk" id="wBo-55-7gj"/>
+                        <outlet property="searchTF" destination="JI9-s9-XaV" id="kNc-Ww-Qck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -149,7 +181,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add" width="256" height="256"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="sorting" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
