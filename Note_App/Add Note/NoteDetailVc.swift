@@ -16,6 +16,8 @@ class NoteDetailVc: UIViewController {
     @IBOutlet weak var descriptionTF: UITextView!
     @IBOutlet weak var saveChangeBtn: UIButton!
     
+    //MARK:- VARIABLES
+    
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()

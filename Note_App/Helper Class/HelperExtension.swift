@@ -82,14 +82,17 @@ extension UIViewController{
         //        let category = input["category"]
         //        let audioPath = input["audioPath"]
         let indexCount = UserDefaults.standard.value(forKey: "index") as? Int ?? 0
-        for i in 1..<(indexCount){
-            let indexName = String(describing: i)
-            if let readIndex = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.value(forKey: indexName) as! Data) as? [String: AnyObject]{
-                dataValue.append(readIndex)
+        if indexCount != 0{
+            for i in 1..<(indexCount){
+                let indexName = String(describing: i)
+                if let readIndex = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.value(forKey: indexName) as! Data) as? [String: AnyObject]{
+                    dataValue.append(readIndex)
+                }
+               // let readIndex = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.value(forKey: indexName) as! Data) as! [String: AnyObject]
+              
             }
-           // let readIndex = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.value(forKey: indexName) as! Data) as! [String: AnyObject]
-          
         }
+       
         return dataValue
     }
 }
