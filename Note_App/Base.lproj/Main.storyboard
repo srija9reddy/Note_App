@@ -489,15 +489,6 @@
                                                                                 <constraint firstAttribute="height" constant="110" id="dlN-aa-w9L"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WY-eq-08v">
-                                                                            <rect key="frame" x="98" y="-3" width="22" height="22"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="22" id="1p1-35-KqU"/>
-                                                                                <constraint firstAttribute="width" constant="22" id="SMI-dD-NpO"/>
-                                                                            </constraints>
-                                                                            <color key="tintColor" systemColor="systemRedColor"/>
-                                                                            <state key="normal" image="ttrash"/>
-                                                                        </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                                     <constraints>
@@ -505,8 +496,6 @@
                                                                         <constraint firstItem="KX6-gr-6pK" firstAttribute="leading" secondItem="Nf7-PM-9tg" secondAttribute="leading" constant="2" id="HnO-Qa-G8Q"/>
                                                                         <constraint firstAttribute="bottom" secondItem="KX6-gr-6pK" secondAttribute="bottom" constant="2" id="a7Y-eF-Ohy"/>
                                                                         <constraint firstItem="KX6-gr-6pK" firstAttribute="top" secondItem="Nf7-PM-9tg" secondAttribute="top" constant="2" id="w1V-hg-cK2"/>
-                                                                        <constraint firstItem="6WY-eq-08v" firstAttribute="trailing" secondItem="KX6-gr-6pK" secondAttribute="trailing" constant="5" id="wzF-Pj-Reo"/>
-                                                                        <constraint firstItem="6WY-eq-08v" firstAttribute="top" secondItem="KX6-gr-6pK" secondAttribute="top" constant="-5" id="xgk-fZ-Hem"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>
@@ -518,6 +507,10 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="147" height="144"/>
+                                                        <connections>
+                                                            <outlet property="imgBackView" destination="Nf7-PM-9tg" id="0tb-DQ-6t7"/>
+                                                            <outlet property="imgView" destination="KX6-gr-6pK" id="Wdr-RN-lYO"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
