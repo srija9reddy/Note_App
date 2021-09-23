@@ -82,7 +82,14 @@ extension AddNoteVc :  UICollectionViewDataSource{
         cell.imgBackView.layer.cornerRadius = 8
         cell.imgBackView.layer.borderWidth = 1
         cell.imgView.image = imgArray[indexPath.row]
+        cell.deleteImgBtn.addTarget(self, action: #selector(removeIMg(sender:)), for: .touchUpInside)
+        cell.deleteImgBtn.tag = indexPath.row
         return cell
+    }
+    
+    @objc func removeIMg(sender:UIButton){
+        self.imgArray.remove(at: sender.tag)
+        self.imageCollectionView.reloadData()
     }
     
 }
