@@ -60,7 +60,7 @@ class AddNoteVc: UIViewController {
             }
         }
         else{
-            
+            self.saveNote()
         }
     }
     
@@ -103,9 +103,18 @@ class AddNoteVc: UIViewController {
         }
     }
     
-
+    func saveNote(){
+        //        let noteName = input["name"]
+        //        let noteImages : [UIImage] = input["images"] as! [UIImage]
+        //        let noteDescription = input["description"]
+        //        let category = input["category"]
+        //        let audioPath = input["audioPath"]
+        let data = ["name":self.titleTF.text!, "images":self.imgArray, "description": self.descriptionTF.text!, "category": self.categoryDropDown.text!, "audioPath": self.audioPath] as! [String : Any]
+        self.saveData(input: data)
+    }
     
     func Delegates(){
+        self.descriptionTF.layer.borderWidth = 0.5
         IQKeyboardManager.shared.enable = true
         imgPicker.delegate = self
         self.recordAudioBtn.layer.cornerRadius = 15
@@ -252,3 +261,5 @@ extension AddNoteVc : CLLocationManagerDelegate{
 //        }
     }
 }
+
+
