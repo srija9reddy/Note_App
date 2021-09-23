@@ -19,6 +19,7 @@
 		C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41326FC398100741CBC /* AnimatableView.swift */; };
 		C92EF41626FC3BAA00741CBC /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41526FC3BAA00741CBC /* HomeTableCell.swift */; };
 		C92EF41826FC3FE700741CBC /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41726FC3FE700741CBC /* iOSDropDown.swift */; };
+		C92EF41E26FC40D000741CBC /* AddNoteVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41D26FC40D000741CBC /* AddNoteVc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C92EF41326FC398100741CBC /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableView.swift; sourceTree = "<group>"; };
 		C92EF41526FC3BAA00741CBC /* HomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		C92EF41726FC3FE700741CBC /* iOSDropDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSDropDown.swift; sourceTree = "<group>"; };
+		C92EF41D26FC40D000741CBC /* AddNoteVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteVc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		C92EF3DE26FC384100741CBC /* Note_App */ = {
 			isa = PBXGroup;
 			children = (
+				C92EF41C26FC40BD00741CBC /* Add Note */,
 				C92EF41226FC396600741CBC /* Helper Class */,
 				C92EF40F26FC391400741CBC /* Home Vc */,
 				C92EF3DF26FC384100741CBC /* AppDelegate.swift */,
@@ -154,6 +157,14 @@
 				C92EF41326FC398100741CBC /* AnimatableView.swift */,
 			);
 			path = "Helper Class";
+			sourceTree = "<group>";
+		};
+		C92EF41C26FC40BD00741CBC /* Add Note */ = {
+			isa = PBXGroup;
+			children = (
+				C92EF41D26FC40D000741CBC /* AddNoteVc.swift */,
+			);
+			path = "Add Note";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 			files = (
 				C92EF3E426FC384100741CBC /* ViewController.swift in Sources */,
 				C92EF41826FC3FE700741CBC /* iOSDropDown.swift in Sources */,
+				C92EF41E26FC40D000741CBC /* AddNoteVc.swift in Sources */,
 				C92EF41126FC392500741CBC /* HomeVc.swift in Sources */,
 				C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */,
 				C92EF3E026FC384100741CBC /* AppDelegate.swift in Sources */,
