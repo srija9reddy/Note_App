@@ -26,7 +26,7 @@ class NoteDetailVc: UIViewController {
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        imgCollectionView.dataSource = self
     }
     
     
@@ -44,4 +44,20 @@ class NoteDetailVc: UIViewController {
     
 }
 
+
+extension NoteDetailVc : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imagesArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NoteDetailCollectionCell", for: indexPath) as! NoteDetailCollectionCell
+        cell.imgBackView.layer.cornerRadius = 8
+        cell.imgBackView.layer.borderWidth = 1
+        cell.imgView.image = imagesArray[indexPath.row]
+        return cell
+    }
+    
+    
+}
 
