@@ -18,6 +18,7 @@ class AddNoteVc: UIViewController {
     @IBOutlet weak var descriptionTF: UITextView!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var addImgBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
 
     //MARK:- VARIABLES
@@ -67,6 +68,11 @@ class AddNoteVc: UIViewController {
     @IBAction func addImgAction(_ sender: UIButton) {
        showPopup()
     }
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     
     //MARK:- USER DEFINED FUNCTIONS
     func showPopup(){

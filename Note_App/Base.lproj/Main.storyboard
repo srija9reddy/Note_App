@@ -344,9 +344,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUP-Y8-agP">
+                                                <rect key="frame" x="15" y="21.5" width="20" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="2mX-Vn-DkV"/>
+                                                    <constraint firstAttribute="width" constant="20" id="uae-pj-dXL"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <state key="normal" image="chevron.left" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backAction:" destination="Q24-Tc-l1s" eventType="touchUpInside" id="9kh-wT-Zp6"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="rUP-Y8-agP" firstAttribute="leading" secondItem="sPU-FB-I6B" secondAttribute="leading" constant="15" id="0En-1O-Jgi"/>
                                             <constraint firstAttribute="bottom" secondItem="XXQ-Qa-m4G" secondAttribute="bottom" constant="30" id="0Uc-ZI-7oA"/>
                                             <constraint firstItem="XXQ-Qa-m4G" firstAttribute="leading" secondItem="sPU-FB-I6B" secondAttribute="leading" constant="30" id="2am-PD-QQ4"/>
                                             <constraint firstAttribute="trailing" secondItem="iLZ-5t-Xxj" secondAttribute="trailing" constant="30" id="BAz-Qp-zlc"/>
@@ -357,6 +370,7 @@
                                             <constraint firstItem="Xv3-ye-OGJ" firstAttribute="leading" secondItem="sPU-FB-I6B" secondAttribute="leading" constant="30" id="GHt-G5-KkD"/>
                                             <constraint firstItem="Xv3-ye-OGJ" firstAttribute="trailing" secondItem="3PV-TY-qhj" secondAttribute="trailing" id="LrZ-Qt-adg"/>
                                             <constraint firstItem="RTw-ZP-cGm" firstAttribute="centerY" secondItem="Xv3-ye-OGJ" secondAttribute="centerY" id="Uv4-jf-8vc"/>
+                                            <constraint firstItem="rUP-Y8-agP" firstAttribute="centerY" secondItem="veC-lm-YRq" secondAttribute="centerY" id="V1S-Jv-TP2"/>
                                             <constraint firstAttribute="trailing" secondItem="XXQ-Qa-m4G" secondAttribute="trailing" constant="30" id="WGo-5Q-qaN"/>
                                             <constraint firstItem="8AR-tY-LLu" firstAttribute="top" secondItem="u2X-gf-9aQ" secondAttribute="bottom" constant="30" id="WrL-u3-s9y"/>
                                             <constraint firstItem="Xv3-ye-OGJ" firstAttribute="leading" secondItem="3PV-TY-qhj" secondAttribute="leading" id="X4u-mJ-STV"/>
@@ -397,6 +411,7 @@
                     </view>
                     <connections>
                         <outlet property="addImgBtn" destination="RTw-ZP-cGm" id="ICJ-YO-Fke"/>
+                        <outlet property="backBtn" destination="rUP-Y8-agP" id="LZD-tk-Kfw"/>
                         <outlet property="categoryDropDown" destination="3PV-TY-qhj" id="Hn9-tu-K1J"/>
                         <outlet property="descriptionTF" destination="5AQ-16-kS1" id="7c5-zE-xxA"/>
                         <outlet property="imageCollectionView" destination="Xv3-ye-OGJ" id="Hgg-VE-ZEY"/>
@@ -429,6 +444,7 @@
     </scenes>
     <resources>
         <image name="add" width="256" height="256"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="cross.circle.fill" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="sorting" width="256" height="256"/>
