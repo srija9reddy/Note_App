@@ -39,13 +39,34 @@ class HomeVc: UIViewController {
     }
     
     @IBAction func sortBtnAction(_ sender: UIButton) {
-        
+        self.showPopup()
     }
     
     func loadData(){
         self.allData = self.readAllData()
         self.notesList_TableView.reloadData()
     }
+    
+    func showPopup(){
+        let alert1 = UIAlertController(title: nil, message: "Sort By", preferredStyle: .actionSheet)
+        let action1 = UIAlertAction(title: "Name ", style: .default) { re in
+
+        }
+        
+        let action2 = UIAlertAction(title: "Time date", style: .default) { r in
+           
+        }
+        let action3 = UIAlertAction(title: "Cancel", style: .default) { r in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
+        alert1.addAction(action1)
+        alert1.addAction(action2)
+        alert1.addAction(action3)
+        self.present(alert1, animated: true, completion: nil)
+    }
+    
+    
 }
 
 
