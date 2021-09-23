@@ -5,7 +5,7 @@
 //
 
 import UIKit
-import AVFAudio
+import AVFoundation
 import CoreLocation
 import IQKeyboardManagerSwift
 
@@ -29,6 +29,7 @@ class AddNoteVc: UIViewController {
     var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
     var locationManager: CLLocationManager!
     var audioPath = ""
+   
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
@@ -115,18 +116,19 @@ class AddNoteVc: UIViewController {
         //        let noteDescription = input["description"]
         //        let category = input["category"]
         //        let audioPath = input["audioPath"]
-        let data = ["name":self.titleTF.text!, "images":self.imgArray, "description": self.descriptionTF.text!, "category": self.categoryDropDown.text!, "audioPath": self.audioPath] as! [String : Any]
+        let data = ["name":self.titleTF.text!, "images":self.imgArray, "description": self.descriptionTF.text!, "category": self.categoryDropDown.text!, "audioPath": self.audioPath, "time": self.currentTimeInMilliSeconds()] as! [String : Any]
        let res = self.saveData(input: data)
+        print(UserDefaults.standard.value(forKey: "index"),"is index")
         if res{
+            let number = UserDefaults.standard.value(forKey: "index") as? Int ?? 1
+            
+            UserDefaults.standard.setValue((number) + (1), forKey: "index")
             self.showAlert(title: "Yeah", message: "Note has been saved") { re in
                 self.navigationController?.popViewController(animated: true)
             }
           
         }
         else{
-            self.showAlert(title: "Error", message: "Something went wrong") { re in
-                
-            }
         }
         
         
