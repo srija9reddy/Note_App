@@ -19,11 +19,13 @@ class AddNoteVc: UIViewController {
 
     //MARK:- VARIABLES
     var imgPicker = UIImagePickerController()
+    var imgArray = [UIImage]()
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         imgPicker.delegate = self
+        imageCollectionView.dataSource = self
     }
     
     //MARK:- IBACTIONS
@@ -63,4 +65,21 @@ extension AddNoteVc : UIImagePickerControllerDelegate, UINavigationControllerDel
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+
+//MARK:- IMAGE COLLECTIONVIEW DELGATES & DATA SOURCES
+extension AddNoteVc :  UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddNoteImageCollectionCell", for: indexPath) as! AddNoteImageCollectionCell
+        cell.imgBackView.layer.cornerRadius = 8
+        cell.imgBackView.layer.borderWidth = 1
+        cell.imgView.image = imgArray[indexPath.row]
+        return cell
+    }
+    
 }
