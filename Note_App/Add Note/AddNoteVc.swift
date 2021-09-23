@@ -125,13 +125,11 @@ class AddNoteVc: UIViewController {
         print(UserDefaults.standard.value(forKey: "index"),"is index")
         if res{
             let number = UserDefaults.standard.value(forKey: "index") as? Int ?? 1
-            
             Indicator.shared.hideProgressView()
             UserDefaults.standard.setValue((number) + (1), forKey: "index")
             self.showAlert(title: "Yeah", message: "Note has been saved") { re in
                 self.navigationController?.popViewController(animated: true)
             }
-          
         }
         else{
             Indicator.shared.hideProgressView()
