@@ -7,22 +7,30 @@
 import UIKit
 
 class AddNoteVc: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    //MARK:- IBOUTLETS
+    @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var categoryDropDown: DropDown!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var recordAudioBtn: UIButton!
+    @IBOutlet weak var descriptionTF: UITextView!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var addImgBtn: UIButton!
     
 
-    /*
-    // MARK: - Navigation
+    //MARK:- VARIABLES
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK:- VIEWDIDLOAD
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    */
-
+    
+    //MARK:- IBACTIONS
+    @IBAction func saveBtnAction(_ sender: UIButton) {
+    
+    }
+    
+    @IBAction func addImgAction(_ sender: UIButton) {
+       
+    }
 }

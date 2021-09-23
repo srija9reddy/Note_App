@@ -284,6 +284,9 @@
                                                 </constraints>
                                                 <color key="tintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="cross.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addImgAction:" destination="Q24-Tc-l1s" eventType="touchUpInside" id="DTM-hB-Muu"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2X-gf-9aQ">
                                                 <rect key="frame" x="30" y="419" width="354" height="40"/>
@@ -309,6 +312,9 @@
                                                 <state key="normal" title="Save Note">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="saveBtnAction:" destination="Q24-Tc-l1s" eventType="touchUpInside" id="1qf-pR-47d"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -359,6 +365,15 @@
                             <constraint firstItem="PU2-ON-ljf" firstAttribute="top" secondItem="OCL-Mv-aDY" secondAttribute="top" id="t5R-33-Ja2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addImgBtn" destination="RTw-ZP-cGm" id="ICJ-YO-Fke"/>
+                        <outlet property="categoryDropDown" destination="3PV-TY-qhj" id="Hn9-tu-K1J"/>
+                        <outlet property="descriptionTF" destination="5AQ-16-kS1" id="7c5-zE-xxA"/>
+                        <outlet property="imageCollectionView" destination="Xv3-ye-OGJ" id="Hgg-VE-ZEY"/>
+                        <outlet property="recordAudioBtn" destination="u2X-gf-9aQ" id="C2c-tY-wmn"/>
+                        <outlet property="saveBtn" destination="XXQ-Qa-m4G" id="Dz0-52-bEH"/>
+                        <outlet property="titleTF" destination="iLZ-5t-Xxj" id="1zA-Lf-VnV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYf-kU-c1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
