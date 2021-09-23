@@ -20,7 +20,7 @@ class AddNoteVc: UIViewController {
     @IBOutlet weak var addImgBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     
-
+    
     //MARK:- VARIABLES
     var imgPicker = UIImagePickerController()
     var imgArray = [UIImage]()
@@ -29,7 +29,8 @@ class AddNoteVc: UIViewController {
     var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
     var locationManager: CLLocationManager!
     var audioPath = ""
-   
+    var latt = 0.0
+    var longg = 0.0
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
@@ -70,7 +71,7 @@ class AddNoteVc: UIViewController {
     }
     
     @IBAction func addImgAction(_ sender: UIButton) {
-       showPopup()
+        showPopup()
     }
     
     @IBAction func backAction(_ sender: UIButton) {
@@ -85,7 +86,7 @@ class AddNoteVc: UIViewController {
             self.imgPicker.sourceType = .camera
             self.navigationController?.present(self.imgPicker, animated: true, completion: nil)
         }
-       
+        
         let action2 = UIAlertAction(title: "Choose From Gallery", style: .default) { r in
             self.imgPicker.sourceType = .photoLibrary
             self.navigationController?.present(self.imgPicker, animated: true, completion: nil)
@@ -120,8 +121,8 @@ class AddNoteVc: UIViewController {
         //        let noteDescription = input["description"]
         //        let category = input["category"]
         //        let audioPath = input["audioPath"]
-        let data = ["name":self.titleTF.text!, "images":self.imgArray, "description": self.descriptionTF.text!, "category": self.categoryDropDown.text!, "audioPath": self.audioPath, "time": self.currentTimeInMilliSeconds()] as! [String : Any]
-       let res = self.saveData(input: data)
+        let data = ["name":self.titleTF.text!, "images":self.imgArray, "description": self.descriptionTF.text!, "category": self.categoryDropDown.text!, "audioPath": self.audioPath, "time": self.currentTimeInMilliSeconds(), "lattitude": self.latt, "longitude":self.longg] as! [String : Any]
+        let res = self.saveData(input: data)
         print(UserDefaults.standard.value(forKey: "index"),"is index")
         if res{
             let number = UserDefaults.standard.value(forKey: "index") as? Int ?? 1
@@ -147,7 +148,7 @@ class AddNoteVc: UIViewController {
         imageCollectionView.dataSource = self
         self.categoryDropDown.isSearchEnable = false
         recordingSession = AVAudioSession.sharedInstance()
-
+        
         do {
             try recordingSession.setCategory(.playAndRecord, mode: .default)
             try recordingSession.setActive(true)
@@ -211,7 +212,7 @@ extension AddNoteVc :  AVAudioRecorderDelegate{
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
-
+        
         do {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.delegate = self
@@ -225,7 +226,7 @@ extension AddNoteVc :  AVAudioRecorderDelegate{
     func finishRecording(success: Bool) {
         audioRecorder.stop()
         audioRecorder = nil
-
+        
         if success {
             recordAudioBtn.setTitle("Tap to Re-record", for: .normal)
         } else {
@@ -237,14 +238,14 @@ extension AddNoteVc :  AVAudioRecorderDelegate{
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         do{
-           // let recorData = try Data(contentsOf: recorder.url)
+            // let recorData = try Data(contentsOf: recorder.url)
             print(recorder.url, "is recording data")
             self.audioPath = String(describing: recorder.url)
         }
         catch{
             
         }
-
+        
         if !flag {
             finishRecording(success: false)
         }
@@ -266,24 +267,27 @@ extension AddNoteVc : CLLocationManagerDelegate{
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
             //locationManager.startUpdatingHeading()
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         print("user latitude = \(userLocation.coordinate.latitude)")
         print("user longitude = \(userLocation.coordinate.longitude)")
+        self.latt = userLocation.coordinate.latitude
+        self.longg = userLocation.coordinate.longitude
+        
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)  {
         print("Error \(error)")
-//        self.showAlert(title: "Location Permission Error", message: "Please Check Location Permission in Device Settings") { r in
-//
-//        }
+        //        self.showAlert(title: "Location Permission Error", message: "Please Check Location Permission in Device Settings") { r in
+        //
+        //        }
     }
 }
 

@@ -29,6 +29,9 @@ class NoteDetailVc: UIViewController {
         imgCollectionView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.loadData()
+    }
     
     //MARK:- IBACTIONS
     @IBAction func playAudioAction(_ sender: UIButton) {
@@ -40,7 +43,22 @@ class NoteDetailVc: UIViewController {
     }
     
     //MARK:- USER DEFINED FUNCTIONS
+    func loadData(){
+        //        let noteName = input["name"]
+        //        let noteImages : [UIImage] = input["images"] as! [UIImage]
+        //        let noteDescription = input["description"]
+        //        let category = input["category"]
+        //        let audioPath = input["audioPath"]
+        
+        self.noteTitleTF.text! = noteData["name"] as? String ?? ""
+        self.categoryTF.text! = noteData["category"] as? String ?? ""
+        let lattitude = noteData["lattitude"] as? Double ?? 0.0
+        let longgitude = noteData["longitude"] as? Double ?? 0.0
+        let locationCoordinates = CLLocation.init(latitude: lattitude, longitude: longgitude)
+        let viewRegion = MKCoordinateRegion(center: locationCoordinates.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
+        self.appleMapView.setRegion(viewRegion, animated: true)
 
+    }
     
 }
 
