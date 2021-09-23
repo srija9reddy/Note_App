@@ -24,6 +24,7 @@
 		C92EF42626FC6B5400741CBC /* HelperExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF42526FC6B5400741CBC /* HelperExtension.swift */; };
 		C92EF42926FC707A00741CBC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C92EF42826FC707A00741CBC /* IQKeyboardManagerSwift */; };
 		C9BCB16B26FC933800238511 /* NoteDetailVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCB16A26FC933800238511 /* NoteDetailVc.swift */; };
+		C9BCB16D26FC953F00238511 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCB16C26FC953F00238511 /* Indicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C92EF41F26FC4B2C00741CBC /* AddNoteImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteImageCollectionCell.swift; sourceTree = "<group>"; };
 		C92EF42526FC6B5400741CBC /* HelperExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtension.swift; sourceTree = "<group>"; };
 		C9BCB16A26FC933800238511 /* NoteDetailVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteDetailVc.swift; path = "Note_App/Add Note/NoteDetailVc.swift"; sourceTree = SOURCE_ROOT; };
+		C9BCB16C26FC953F00238511 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				C92EF41726FC3FE700741CBC /* iOSDropDown.swift */,
 				C92EF41326FC398100741CBC /* AnimatableView.swift */,
 				C92EF42526FC6B5400741CBC /* HelperExtension.swift */,
+				C9BCB16C26FC953F00238511 /* Indicator.swift */,
 			);
 			path = "Helper Class";
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				C92EF42026FC4B2C00741CBC /* AddNoteImageCollectionCell.swift in Sources */,
 				C92EF41126FC392500741CBC /* HomeVc.swift in Sources */,
 				C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */,
+				C9BCB16D26FC953F00238511 /* Indicator.swift in Sources */,
 				C92EF3E026FC384100741CBC /* AppDelegate.swift in Sources */,
 				C9BCB16B26FC933800238511 /* NoteDetailVc.swift in Sources */,
 				C92EF3E226FC384100741CBC /* SceneDelegate.swift in Sources */,

@@ -114,6 +114,7 @@ class AddNoteVc: UIViewController {
     }
     
     func saveNote(){
+        Indicator.shared.showProgressView(self.view)
         //        let noteName = input["name"]
         //        let noteImages : [UIImage] = input["images"] as! [UIImage]
         //        let noteDescription = input["description"]
@@ -125,6 +126,7 @@ class AddNoteVc: UIViewController {
         if res{
             let number = UserDefaults.standard.value(forKey: "index") as? Int ?? 1
             
+            Indicator.shared.hideProgressView()
             UserDefaults.standard.setValue((number) + (1), forKey: "index")
             self.showAlert(title: "Yeah", message: "Note has been saved") { re in
                 self.navigationController?.popViewController(animated: true)
@@ -132,6 +134,7 @@ class AddNoteVc: UIViewController {
           
         }
         else{
+            Indicator.shared.hideProgressView()
         }
         
         

@@ -303,17 +303,6 @@
                                                     <action selector="addImgAction:" destination="Q24-Tc-l1s" eventType="touchUpInside" id="DTM-hB-Muu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2X-gf-9aQ">
-                                                <rect key="frame" x="30" y="419" width="354" height="50"/>
-                                                <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="UO9-kY-jj0"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="PingFangHK-Medium" family="PingFang HK" pointSize="17"/>
-                                                <state key="normal" title="Record Audio">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5AQ-16-kS1">
                                                 <rect key="frame" x="30" y="544" width="354" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -372,21 +361,18 @@
                                             <constraint firstItem="RTw-ZP-cGm" firstAttribute="centerY" secondItem="Xv3-ye-OGJ" secondAttribute="centerY" id="Uv4-jf-8vc"/>
                                             <constraint firstItem="rUP-Y8-agP" firstAttribute="centerY" secondItem="veC-lm-YRq" secondAttribute="centerY" id="V1S-Jv-TP2"/>
                                             <constraint firstAttribute="trailing" secondItem="XXQ-Qa-m4G" secondAttribute="trailing" constant="30" id="WGo-5Q-qaN"/>
-                                            <constraint firstItem="8AR-tY-LLu" firstAttribute="top" secondItem="u2X-gf-9aQ" secondAttribute="bottom" constant="30" id="WrL-u3-s9y"/>
                                             <constraint firstItem="Xv3-ye-OGJ" firstAttribute="leading" secondItem="3PV-TY-qhj" secondAttribute="leading" id="X4u-mJ-STV"/>
                                             <constraint firstItem="5AQ-16-kS1" firstAttribute="top" secondItem="8AR-tY-LLu" secondAttribute="bottom" constant="20" id="XkT-mR-RAl"/>
                                             <constraint firstItem="3PV-TY-qhj" firstAttribute="leading" secondItem="iLZ-5t-Xxj" secondAttribute="leading" id="ZPO-HX-44O"/>
                                             <constraint firstAttribute="trailing" secondItem="Xv3-ye-OGJ" secondAttribute="trailing" constant="30" id="ZpW-hR-pNN"/>
                                             <constraint firstItem="Xv3-ye-OGJ" firstAttribute="top" secondItem="3PV-TY-qhj" secondAttribute="bottom" constant="35" id="cmk-gd-OXn"/>
+                                            <constraint firstItem="8AR-tY-LLu" firstAttribute="leading" secondItem="5AQ-16-kS1" secondAttribute="leading" id="ekx-Aj-JB7"/>
                                             <constraint firstAttribute="trailing" secondItem="RTw-ZP-cGm" secondAttribute="trailing" constant="20" id="fQ3-9H-fJ6"/>
                                             <constraint firstItem="veC-lm-YRq" firstAttribute="top" secondItem="sPU-FB-I6B" secondAttribute="top" constant="20" id="ffW-ZW-Vpz"/>
                                             <constraint firstItem="3PV-TY-qhj" firstAttribute="trailing" secondItem="iLZ-5t-Xxj" secondAttribute="trailing" id="fyP-Qd-V8H"/>
                                             <constraint firstItem="iLZ-5t-Xxj" firstAttribute="top" secondItem="veC-lm-YRq" secondAttribute="bottom" constant="50" id="g6l-WZ-Huy"/>
-                                            <constraint firstItem="u2X-gf-9aQ" firstAttribute="leading" secondItem="Xv3-ye-OGJ" secondAttribute="leading" id="lIq-cZ-m6Z"/>
-                                            <constraint firstItem="u2X-gf-9aQ" firstAttribute="top" secondItem="Xv3-ye-OGJ" secondAttribute="bottom" constant="35" id="lae-Fk-GhF"/>
                                             <constraint firstItem="veC-lm-YRq" firstAttribute="centerX" secondItem="sPU-FB-I6B" secondAttribute="centerX" id="qps-dx-Beh"/>
-                                            <constraint firstItem="u2X-gf-9aQ" firstAttribute="trailing" secondItem="Xv3-ye-OGJ" secondAttribute="trailing" id="t4d-Nr-4Hd"/>
-                                            <constraint firstItem="8AR-tY-LLu" firstAttribute="leading" secondItem="u2X-gf-9aQ" secondAttribute="leading" id="tNj-Ry-jke"/>
+                                            <constraint firstAttribute="height" constant="687" id="uN6-yl-lqL"/>
                                             <constraint firstItem="3PV-TY-qhj" firstAttribute="top" secondItem="iLZ-5t-Xxj" secondAttribute="bottom" constant="35" id="vgJ-hf-kqn"/>
                                         </constraints>
                                     </view>
@@ -415,7 +401,6 @@
                         <outlet property="categoryDropDown" destination="3PV-TY-qhj" id="Hn9-tu-K1J"/>
                         <outlet property="descriptionTF" destination="5AQ-16-kS1" id="7c5-zE-xxA"/>
                         <outlet property="imageCollectionView" destination="Xv3-ye-OGJ" id="Hgg-VE-ZEY"/>
-                        <outlet property="recordAudioBtn" destination="u2X-gf-9aQ" id="C2c-tY-wmn"/>
                         <outlet property="saveBtn" destination="XXQ-Qa-m4G" id="Dz0-52-bEH"/>
                         <outlet property="titleTF" destination="iLZ-5t-Xxj" id="1zA-Lf-VnV"/>
                     </connections>
@@ -437,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DLi-BP-Gx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2882" y="27"/>
+            <point key="canvasLocation" x="2868" y="52"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NRU-Az-22U">
