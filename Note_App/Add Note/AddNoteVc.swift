@@ -44,7 +44,8 @@ class AddNoteVc: UIViewController {
         }
        
         let action2 = UIAlertAction(title: "Choose From Gallery", style: .default) { r in
-          
+            self.imgPicker.sourceType = .photoLibrary
+            self.navigationController?.present(self.imgPicker, animated: true, completion: nil)
         }
         let action3 = UIAlertAction(title: "Cancel", style: .default) { r in
             self.dismiss(animated: true, completion: nil)
