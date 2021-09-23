@@ -63,6 +63,9 @@ class AddNoteVc: UIViewController {
 //MARK:- IMAGE PICKER DELEGATES
 extension AddNoteVc : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        self.imgArray.append(selectedImage)
+        self.imageCollectionView.reloadData()
         self.dismiss(animated: true, completion: nil)
     }
 }
