@@ -16,6 +16,7 @@
 		C92EF3F726FC384200741CBC /* Note_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF3F626FC384200741CBC /* Note_AppTests.swift */; };
 		C92EF40226FC384200741CBC /* Note_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF40126FC384200741CBC /* Note_AppUITests.swift */; };
 		C92EF41126FC392500741CBC /* HomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41026FC392500741CBC /* HomeVc.swift */; };
+		C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EF41326FC398100741CBC /* AnimatableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C92EF40126FC384200741CBC /* Note_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note_AppUITests.swift; sourceTree = "<group>"; };
 		C92EF40326FC384200741CBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92EF41026FC392500741CBC /* HomeVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVc.swift; sourceTree = "<group>"; };
+		C92EF41326FC398100741CBC /* AnimatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		C92EF3DE26FC384100741CBC /* Note_App */ = {
 			isa = PBXGroup;
 			children = (
+				C92EF41226FC396600741CBC /* Helper Class */,
 				C92EF40F26FC391400741CBC /* Home Vc */,
 				C92EF3DF26FC384100741CBC /* AppDelegate.swift */,
 				C92EF3E126FC384100741CBC /* SceneDelegate.swift */,
@@ -137,6 +140,14 @@
 				C92EF41026FC392500741CBC /* HomeVc.swift */,
 			);
 			path = "Home Vc";
+			sourceTree = "<group>";
+		};
+		C92EF41226FC396600741CBC /* Helper Class */ = {
+			isa = PBXGroup;
+			children = (
+				C92EF41326FC398100741CBC /* AnimatableView.swift */,
+			);
+			path = "Helper Class";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +282,7 @@
 			files = (
 				C92EF3E426FC384100741CBC /* ViewController.swift in Sources */,
 				C92EF41126FC392500741CBC /* HomeVc.swift in Sources */,
+				C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */,
 				C92EF3E026FC384100741CBC /* AppDelegate.swift in Sources */,
 				C92EF3E226FC384100741CBC /* SceneDelegate.swift in Sources */,
 			);
