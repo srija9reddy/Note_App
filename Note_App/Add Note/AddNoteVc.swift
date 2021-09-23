@@ -18,11 +18,12 @@ class AddNoteVc: UIViewController {
     
 
     //MARK:- VARIABLES
-
+    var imgPicker = UIImagePickerController()
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgPicker.delegate = self
     }
     
     //MARK:- IBACTIONS
@@ -38,7 +39,8 @@ class AddNoteVc: UIViewController {
     func showPopup(){
         let alert1 = UIAlertController(title: nil, message: "Add Image to Note", preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "Capture Image", style: .default) { re in
-            
+            self.imgPicker.sourceType = .camera
+            self.navigationController?.present(self.imgPicker, animated: true, completion: nil)
         }
        
         let action2 = UIAlertAction(title: "Choose From Gallery", style: .default) { r in
@@ -52,5 +54,12 @@ class AddNoteVc: UIViewController {
         alert1.addAction(action2)
         alert1.addAction(action3)
         self.present(alert1, animated: true, completion: nil)
+    }
+}
+
+//MARK:- IMAGE PICKER DELEGATES
+extension AddNoteVc : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
