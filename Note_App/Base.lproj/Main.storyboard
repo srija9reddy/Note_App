@@ -128,6 +128,9 @@
                                         <state key="normal" title="Sort" image="sorting">
                                             <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sortBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1r0-Od-ZGQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmv-hl-N6A">
                                         <rect key="frame" x="334" y="706" width="60" height="60"/>
@@ -142,6 +145,9 @@
                                         <state key="normal" title="Add Note" image="add">
                                             <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addNoteAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="duH-ra-Nzc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -170,9 +176,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addNoteBtn" destination="Cmv-hl-N6A" id="l0U-Ui-EXC"/>
                         <outlet property="notesList_TableView" destination="e5I-Tg-0DG" id="eUp-ut-oOG"/>
                         <outlet property="searchBtn" destination="ncK-1e-JFk" id="wBo-55-7gj"/>
                         <outlet property="searchTF" destination="JI9-s9-XaV" id="kNc-Ww-Qck"/>
+                        <outlet property="sortBtn" destination="cxe-bH-cFk" id="gWx-o0-VYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
