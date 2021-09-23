@@ -192,7 +192,7 @@
         <!--Add Note Vc-->
         <scene sceneID="wwh-oN-xp5">
             <objects>
-                <viewController id="Q24-Tc-l1s" customClass="AddNoteVc" customModule="Note_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNoteVc" id="Q24-Tc-l1s" customClass="AddNoteVc" customModule="Note_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HTn-Pa-eYm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

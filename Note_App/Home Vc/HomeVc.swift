@@ -28,7 +28,8 @@ class HomeVc: UIViewController {
     }
     
     @IBAction func addNoteAction(_ sender: UIButton) {
-       
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddNoteVc") as! AddNoteVc
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func sortBtnAction(_ sender: UIButton) {
