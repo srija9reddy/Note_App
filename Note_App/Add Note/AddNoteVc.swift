@@ -280,7 +280,6 @@ extension AddNoteVc : CLLocationManagerDelegate{
         print("user longitude = \(userLocation.coordinate.longitude)")
         self.latt = userLocation.coordinate.latitude
         self.longg = userLocation.coordinate.longitude
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)  {
@@ -290,5 +289,3 @@ extension AddNoteVc : CLLocationManagerDelegate{
         //        }
     }
 }
-
-

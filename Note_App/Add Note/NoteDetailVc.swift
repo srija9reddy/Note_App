@@ -6,6 +6,9 @@
 
 import UIKit
 import MapKit
+import Foundation
+import AVFoundation
+import WebKit
 
 class NoteDetailVc: UIViewController {
     
@@ -18,6 +21,7 @@ class NoteDetailVc: UIViewController {
     @IBOutlet weak var saveChangeBtn: UIButton!
     @IBOutlet weak var appleMapView: MKMapView!
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var webVieww: WKWebView!
     
     
     //MARK:- VARIABLES
@@ -25,7 +29,9 @@ class NoteDetailVc: UIViewController {
     var index = -1
     var imagesArray = [UIImage]()
     var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
-    
+    var player = AVAudioPlayer()
+
+
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +44,16 @@ class NoteDetailVc: UIViewController {
     
     //MARK:- IBACTIONS
     @IBAction func playAudioAction(_ sender: UIButton) {
-        
     }
     
     @IBAction func saveChanges(_ sender: UIButton) {
+        let lattitude = noteData["lattitude"] as? Double ?? 0.0
+        let longgitude = noteData["longitude"] as? Double ?? 0.0
+        let data = ["name":self.noteTitleTF.text!, "images":self.imagesArray, "description": self.descriptionTF.text!, "category": self.categoryTF.text!, "audioPath": self.noteData["audioPath"] as? String ?? "", "time": self.currentTimeInMilliSeconds(), "lattitude": lattitude, "longitude":longgitude] as! [String : Any]
         
+        let inndex = String(describing: ((UserDefaults.standard.value(forKey: "index") as? Int ?? 1) - (1)))
+        UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: data), forKey: inndex)
+
     }
     
     //MARK:- USER DEFINED FUNCTIONS
@@ -52,6 +63,7 @@ class NoteDetailVc: UIViewController {
         //        let noteDescription = input["description"]
         //        let category = input["category"]
         //        let audioPath = input["audioPath"]
+        
         self.categoryTF.isSearchEnable = false
         self.categoryTF.optionArray = self.categoryArray
         self.saveChangeBtn.layer.cornerRadius = 15
@@ -71,6 +83,8 @@ class NoteDetailVc: UIViewController {
             self.imgCollectionView.reloadData()
         }
     }
+    
+    
     
     @IBAction func backBtnAction(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
