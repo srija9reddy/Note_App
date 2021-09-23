@@ -273,6 +273,11 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="147" height="144"/>
+                                                        <connections>
+                                                            <outlet property="deleteImgBtn" destination="iB1-1F-8NA" id="6jz-DW-XK1"/>
+                                                            <outlet property="imgBackView" destination="wxP-8G-DU1" id="xu6-ww-B25"/>
+                                                            <outlet property="imgView" destination="Ehh-bc-Rjz" id="wux-Tw-ede"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
