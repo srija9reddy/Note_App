@@ -53,7 +53,9 @@ class NoteDetailVc: UIViewController {
         
         let inndex = String(describing: ((UserDefaults.standard.value(forKey: "index") as? Int ?? 1) - (1)))
         UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: data), forKey: inndex)
-
+        self.showAlert(title: "Yeah", message: "Note Updated") { a in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     //MARK:- USER DEFINED FUNCTIONS
