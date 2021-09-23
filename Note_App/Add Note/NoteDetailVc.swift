@@ -57,7 +57,12 @@ class NoteDetailVc: UIViewController {
         let locationCoordinates = CLLocation.init(latitude: lattitude, longitude: longgitude)
         let viewRegion = MKCoordinateRegion(center: locationCoordinates.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
         self.appleMapView.setRegion(viewRegion, animated: true)
-
+        if let images = noteData["images"] as? [UIImage]{
+            for i in 0..<(images.count){
+                self.imagesArray.append(images[i])
+            }
+            self.imgCollectionView.reloadData()
+        }
     }
     
 }
