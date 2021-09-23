@@ -24,6 +24,7 @@ class NoteDetailVc: UIViewController {
     var noteData = [String:AnyObject]()
     var index = -1
     var imagesArray = [UIImage]()
+    var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
@@ -51,11 +52,15 @@ class NoteDetailVc: UIViewController {
         //        let noteDescription = input["description"]
         //        let category = input["category"]
         //        let audioPath = input["audioPath"]
-        
+        self.categoryTF.isSearchEnable = false
+        self.categoryTF.optionArray = self.categoryArray
+        self.saveChangeBtn.layer.cornerRadius = 15
+        self.playAudioBtn.layer.cornerRadius = 15
         self.noteTitleTF.text! = noteData["name"] as? String ?? ""
         self.categoryTF.text! = noteData["category"] as? String ?? ""
         let lattitude = noteData["lattitude"] as? Double ?? 0.0
         let longgitude = noteData["longitude"] as? Double ?? 0.0
+        self.descriptionTF.text = noteData["description"] as? String ?? ""
         let locationCoordinates = CLLocation.init(latitude: lattitude, longitude: longgitude)
         let viewRegion = MKCoordinateRegion(center: locationCoordinates.coordinate, latitudinalMeters: 400, longitudinalMeters: 400)
         self.appleMapView.setRegion(viewRegion, animated: true)
