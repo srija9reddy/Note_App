@@ -110,7 +110,20 @@ class AddNoteVc: UIViewController {
         //        let category = input["category"]
         //        let audioPath = input["audioPath"]
         let data = ["name":self.titleTF.text!, "images":self.imgArray, "description": self.descriptionTF.text!, "category": self.categoryDropDown.text!, "audioPath": self.audioPath] as! [String : Any]
-        self.saveData(input: data)
+       let res = self.saveData(input: data)
+        if res{
+            self.showAlert(title: "Yeah", message: "Note has been saved") { re in
+                self.navigationController?.popViewController(animated: true)
+            }
+          
+        }
+        else{
+            self.showAlert(title: "Error", message: "Something went wrong") { re in
+                
+            }
+        }
+        
+        
     }
     
     func Delegates(){
