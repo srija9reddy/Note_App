@@ -7,6 +7,7 @@
 import UIKit
 import AVFAudio
 import CoreLocation
+import IQKeyboardManagerSwift
 
 class AddNoteVc: UIViewController {
     //MARK:- IBOUTLETS
@@ -26,44 +27,41 @@ class AddNoteVc: UIViewController {
     var audioRecorder: AVAudioRecorder!
     var categoryArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
     var locationManager: CLLocationManager!
-    
+    var audioPath = ""
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgPicker.delegate = self
-        self.recordAudioBtn.layer.cornerRadius = 15
-        self.saveBtn.layer.cornerRadius = 15
-        imageCollectionView.dataSource = self
-        recordingSession = AVAudioSession.sharedInstance()
-
-        do {
-            try recordingSession.setCategory(.playAndRecord, mode: .default)
-            try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission() { [unowned self] allowed in
-                DispatchQueue.main.async {
-                    if allowed {
-                        loadRecordingUI()
-                        print("recording permission allowed")
-                    } else {
-                        print("failed to record!")
-                    }
-                }
-            }
-        } catch {
-            // failed to record!
-        }
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        Delegates()
         self.categoryDropDown.optionArray = categoryArray
         self.determineMyCurrentLocation()
     }
     
     //MARK:- IBACTIONS
     @IBAction func saveBtnAction(_ sender: UIButton) {
-    
+        if self.titleTF.text?.replacingOccurrences(of: " ", with: "") == ""{
+            self.showAlert(title: "Please Check", message: "Title Can't be blank") { s in
+                
+            }
+        }
+        else if self.categoryDropDown.text?.replacingOccurrences(of: " ", with: "") == "" {
+            self.showAlert(title: "Please Check", message: "Please Choose Category") { s in
+                
+            }
+        }
+        else if self.descriptionTF.text?.replacingOccurrences(of: " ", with: "") == "" {
+            self.showAlert(title: "Please Check", message: "Please Enter Description") { s in
+                
+            }
+        }
+        else{
+            
+        }
     }
     
     @IBAction func addImgAction(_ sender: UIButton) {
@@ -105,6 +103,34 @@ class AddNoteVc: UIViewController {
         }
     }
     
+
+    
+    func Delegates(){
+        IQKeyboardManager.shared.enable = true
+        imgPicker.delegate = self
+        self.recordAudioBtn.layer.cornerRadius = 15
+        self.saveBtn.layer.cornerRadius = 15
+        imageCollectionView.dataSource = self
+        self.categoryDropDown.isSearchEnable = false
+        recordingSession = AVAudioSession.sharedInstance()
+
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        loadRecordingUI()
+                        print("recording permission allowed")
+                    } else {
+                        print("failed to record!")
+                    }
+                }
+            }
+        } catch {
+            
+        }
+    }
 }
 
 //MARK:- IMAGE PICKER DELEGATES
@@ -179,6 +205,7 @@ extension AddNoteVc :  AVAudioRecorderDelegate{
         do{
            // let recorData = try Data(contentsOf: recorder.url)
             print(recorder.url, "is recording data")
+            self.audioPath = String(describing: recorder.url)
         }
         catch{
             
@@ -197,6 +224,7 @@ extension AddNoteVc :  AVAudioRecorderDelegate{
 }
 
 
+//MARK:- FETCH USER'S CURRENT LOCATION
 extension AddNoteVc : CLLocationManagerDelegate{
     
     func determineMyCurrentLocation() {
@@ -213,19 +241,14 @@ extension AddNoteVc : CLLocationManagerDelegate{
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
-
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-
-       // manager.stopUpdatingLocation()
-
         print("user latitude = \(userLocation.coordinate.latitude)")
         print("user longitude = \(userLocation.coordinate.longitude)")
-        
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)  {
         print("Error \(error)")
+//        self.showAlert(title: "Location Permission Error", message: "Please Check Location Permission in Device Settings") { r in
+//
+//        }
     }
 }
