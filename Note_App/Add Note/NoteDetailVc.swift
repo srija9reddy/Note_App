@@ -17,6 +17,8 @@ class NoteDetailVc: UIViewController {
     @IBOutlet weak var descriptionTF: UITextView!
     @IBOutlet weak var saveChangeBtn: UIButton!
     @IBOutlet weak var appleMapView: MKMapView!
+    @IBOutlet weak var backBtn: UIButton!
+    
     
     //MARK:- VARIABLES
     var noteData = [String:AnyObject]()
@@ -63,6 +65,10 @@ class NoteDetailVc: UIViewController {
             }
             self.imgCollectionView.reloadData()
         }
+    }
+    
+    @IBAction func backBtnAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

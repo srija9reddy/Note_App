@@ -565,6 +565,18 @@
                                                     <constraint firstAttribute="height" constant="220" id="tEK-va-hYM"/>
                                                 </constraints>
                                             </mapView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-zp-hvg">
+                                                <rect key="frame" x="20" y="21.5" width="20" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="Utm-Om-rvl"/>
+                                                    <constraint firstAttribute="width" constant="20" id="ac5-7s-O6F"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="chevron.left" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backBtnAction:" destination="Y89-Wx-1x5" eventType="touchUpInside" id="UJr-lO-kGl"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -578,6 +590,7 @@
                                             <constraint firstItem="x41-h7-jmc" firstAttribute="top" secondItem="u2X-gf-9aQ" secondAttribute="bottom" constant="30" id="D4Q-9k-Vc0"/>
                                             <constraint firstItem="1I3-dj-GVP" firstAttribute="top" secondItem="A5J-z4-pXE" secondAttribute="bottom" constant="35" id="FeB-uX-EZ6"/>
                                             <constraint firstAttribute="trailing" secondItem="sm8-y6-P5k" secondAttribute="trailing" constant="30" id="H1C-ay-DSF"/>
+                                            <constraint firstItem="zm2-zp-hvg" firstAttribute="leading" secondItem="JLG-5A-Knk" secondAttribute="leading" constant="20" id="KVG-2k-Dkf"/>
                                             <constraint firstItem="IC8-oU-NwX" firstAttribute="leading" secondItem="2wO-7z-lUs" secondAttribute="leading" id="RcL-aI-vp5"/>
                                             <constraint firstItem="A5J-z4-pXE" firstAttribute="leading" secondItem="JLG-5A-Knk" secondAttribute="leading" constant="30" id="Sjd-Of-KPa"/>
                                             <constraint firstItem="8qW-is-KYS" firstAttribute="leading" secondItem="JLG-5A-Knk" secondAttribute="leading" constant="10" id="TI6-jb-yDY"/>
@@ -591,6 +604,7 @@
                                             <constraint firstItem="8qW-is-KYS" firstAttribute="top" secondItem="JLG-5A-Knk" secondAttribute="top" constant="20" id="gka-K0-i3M"/>
                                             <constraint firstItem="u2X-gf-9aQ" firstAttribute="top" secondItem="sm8-y6-P5k" secondAttribute="bottom" constant="35" id="gu7-dc-FLk"/>
                                             <constraint firstItem="1I3-dj-GVP" firstAttribute="leading" secondItem="A5J-z4-pXE" secondAttribute="leading" id="hxz-Dd-Iwg"/>
+                                            <constraint firstItem="zm2-zp-hvg" firstAttribute="centerY" secondItem="8qW-is-KYS" secondAttribute="centerY" id="k9z-7M-WkL"/>
                                             <constraint firstAttribute="trailing" secondItem="2wO-7z-lUs" secondAttribute="trailing" constant="30" id="omJ-g9-Xfm"/>
                                             <constraint firstItem="EAe-4d-mft" firstAttribute="trailing" secondItem="u2X-gf-9aQ" secondAttribute="trailing" id="pa9-Cm-IQj"/>
                                             <constraint firstItem="IC8-oU-NwX" firstAttribute="leading" secondItem="u2X-gf-9aQ" secondAttribute="leading" id="r0F-RO-qpP"/>
@@ -618,6 +632,7 @@
                     </view>
                     <connections>
                         <outlet property="appleMapView" destination="x41-h7-jmc" id="J4X-kF-EI0"/>
+                        <outlet property="backBtn" destination="zm2-zp-hvg" id="bEd-vO-xve"/>
                         <outlet property="categoryTF" destination="1I3-dj-GVP" id="ToD-ir-0kU"/>
                         <outlet property="descriptionTF" destination="2wO-7z-lUs" id="kwa-Lv-vye"/>
                         <outlet property="imgCollectionView" destination="sm8-y6-P5k" id="Zjy-YW-iz3"/>
