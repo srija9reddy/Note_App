@@ -5,6 +5,7 @@
 //
 
 import UIKit
+import MapKit
 
 class NoteDetailVc: UIViewController {
     
@@ -15,8 +16,10 @@ class NoteDetailVc: UIViewController {
     @IBOutlet weak var playAudioBtn: UIButton!
     @IBOutlet weak var descriptionTF: UITextView!
     @IBOutlet weak var saveChangeBtn: UIButton!
+    @IBOutlet weak var appleMapView: MKMapView!
     
     //MARK:- VARIABLES
+    
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {

@@ -436,7 +436,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLG-5A-Knk">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="932"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qW-is-KYS">
                                                 <rect key="frame" x="10" y="20" width="394" height="28"/>
@@ -541,7 +541,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC8-oU-NwX">
-                                                <rect key="frame" x="30" y="504" width="135" height="25"/>
+                                                <rect key="frame" x="30" y="749" width="135" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="AzT-7Y-GPP"/>
                                                 </constraints>
@@ -550,14 +550,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Description Detail" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2wO-7z-lUs">
-                                                <rect key="frame" x="30" y="549" width="354" height="33"/>
+                                                <rect key="frame" x="30" y="794" width="354" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAe-4d-mft">
-                                                <rect key="frame" x="30" y="617" width="354" height="50"/>
+                                                <rect key="frame" x="30" y="862" width="354" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="yGE-jm-MdQ"/>
@@ -571,15 +571,23 @@
                                                     <action selector="saveChanges:" destination="Y89-Wx-1x5" eventType="touchUpInside" id="mki-9e-qrs"/>
                                                 </connections>
                                             </button>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="x41-h7-jmc">
+                                                <rect key="frame" x="30" y="499" width="354" height="220"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="220" id="tEK-va-hYM"/>
+                                                </constraints>
+                                            </mapView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="IC8-oU-NwX" firstAttribute="top" secondItem="x41-h7-jmc" secondAttribute="bottom" constant="30" id="0Hd-cJ-X5E"/>
                                             <constraint firstAttribute="trailing" secondItem="8qW-is-KYS" secondAttribute="trailing" constant="10" id="1Kc-3i-IaC"/>
                                             <constraint firstAttribute="bottom" secondItem="EAe-4d-mft" secondAttribute="bottom" constant="20" id="2X9-QT-BTy"/>
                                             <constraint firstAttribute="trailing" secondItem="A5J-z4-pXE" secondAttribute="trailing" constant="30" id="5wI-xH-ExX"/>
                                             <constraint firstItem="sm8-y6-P5k" firstAttribute="top" secondItem="1I3-dj-GVP" secondAttribute="bottom" constant="35" id="6aF-Cf-Xym"/>
+                                            <constraint firstItem="x41-h7-jmc" firstAttribute="leading" secondItem="JLG-5A-Knk" secondAttribute="leading" constant="30" id="6ul-I4-Jm9"/>
                                             <constraint firstItem="1I3-dj-GVP" firstAttribute="trailing" secondItem="A5J-z4-pXE" secondAttribute="trailing" id="88S-Jl-j35"/>
-                                            <constraint firstItem="IC8-oU-NwX" firstAttribute="top" secondItem="u2X-gf-9aQ" secondAttribute="bottom" constant="35" id="APQ-GL-VPd"/>
+                                            <constraint firstItem="x41-h7-jmc" firstAttribute="top" secondItem="u2X-gf-9aQ" secondAttribute="bottom" constant="30" id="D4Q-9k-Vc0"/>
                                             <constraint firstItem="1I3-dj-GVP" firstAttribute="top" secondItem="A5J-z4-pXE" secondAttribute="bottom" constant="35" id="FeB-uX-EZ6"/>
                                             <constraint firstAttribute="trailing" secondItem="sm8-y6-P5k" secondAttribute="trailing" constant="30" id="H1C-ay-DSF"/>
                                             <constraint firstItem="IC8-oU-NwX" firstAttribute="leading" secondItem="2wO-7z-lUs" secondAttribute="leading" id="RcL-aI-vp5"/>
@@ -598,6 +606,7 @@
                                             <constraint firstAttribute="trailing" secondItem="2wO-7z-lUs" secondAttribute="trailing" constant="30" id="omJ-g9-Xfm"/>
                                             <constraint firstItem="EAe-4d-mft" firstAttribute="trailing" secondItem="u2X-gf-9aQ" secondAttribute="trailing" id="pa9-Cm-IQj"/>
                                             <constraint firstItem="IC8-oU-NwX" firstAttribute="leading" secondItem="u2X-gf-9aQ" secondAttribute="leading" id="r0F-RO-qpP"/>
+                                            <constraint firstAttribute="trailing" secondItem="x41-h7-jmc" secondAttribute="trailing" constant="30" id="uRz-Ie-6Ll"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -620,6 +629,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appleMapView" destination="x41-h7-jmc" id="J4X-kF-EI0"/>
                         <outlet property="categoryTF" destination="1I3-dj-GVP" id="ToD-ir-0kU"/>
                         <outlet property="descriptionTF" destination="2wO-7z-lUs" id="kwa-Lv-vye"/>
                         <outlet property="imgCollectionView" destination="sm8-y6-P5k" id="Zjy-YW-iz3"/>

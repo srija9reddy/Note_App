@@ -75,6 +75,7 @@ extension HomeVc : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailVc") as! NoteDetailVc
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
