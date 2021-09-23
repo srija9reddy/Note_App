@@ -19,7 +19,9 @@ class NoteDetailVc: UIViewController {
     @IBOutlet weak var appleMapView: MKMapView!
     
     //MARK:- VARIABLES
-    
+    var noteData = [String:AnyObject]()
+    var index = -1
+    var imagesArray = [UIImage]()
     
     //MARK:- VIEWDIDLOAD
     override func viewDidLoad() {
@@ -36,5 +38,8 @@ class NoteDetailVc: UIViewController {
     @IBAction func saveChanges(_ sender: UIButton) {
         
     }
+    
+    //MARK:- USER DEFINED FUNCTIONS
+
     
 }

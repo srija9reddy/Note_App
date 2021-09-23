@@ -472,7 +472,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddNoteImageCollectionCell" id="2y6-Uo-yxL" customClass="AddNoteImageCollectionCell" customModule="Note_App" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddNoteImageCollectionCell" id="2y6-Uo-yxL" customClass="NoteDetailCollectionCell" customModule="Note_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="3" width="147" height="144"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vbe-Pi-01e">
@@ -518,11 +518,6 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="147" height="144"/>
-                                                        <connections>
-                                                            <outlet property="deleteImgBtn" destination="6WY-eq-08v" id="fLy-fi-MIb"/>
-                                                            <outlet property="imgBackView" destination="Nf7-PM-9tg" id="xSG-kF-P2F"/>
-                                                            <outlet property="imgView" destination="KX6-gr-6pK" id="VLC-ay-2tX"/>
-                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>

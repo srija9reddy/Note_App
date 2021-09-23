@@ -25,6 +25,7 @@
 		C92EF42926FC707A00741CBC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C92EF42826FC707A00741CBC /* IQKeyboardManagerSwift */; };
 		C9BCB16B26FC933800238511 /* NoteDetailVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCB16A26FC933800238511 /* NoteDetailVc.swift */; };
 		C9BCB16D26FC953F00238511 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCB16C26FC953F00238511 /* Indicator.swift */; };
+		C9DB4FFE26FC9E1A00180861 /* NoteDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB4FFD26FC9E1A00180861 /* NoteDetailCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		C92EF42526FC6B5400741CBC /* HelperExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtension.swift; sourceTree = "<group>"; };
 		C9BCB16A26FC933800238511 /* NoteDetailVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteDetailVc.swift; path = "Note_App/Add Note/NoteDetailVc.swift"; sourceTree = SOURCE_ROOT; };
 		C9BCB16C26FC953F00238511 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		C9DB4FFD26FC9E1A00180861 /* NoteDetailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				C9BCB16A26FC933800238511 /* NoteDetailVc.swift */,
+				C9DB4FFD26FC9E1A00180861 /* NoteDetailCollectionCell.swift */,
 			);
 			path = "Note Detail ";
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				C92EF3E426FC384100741CBC /* ViewController.swift in Sources */,
 				C92EF41826FC3FE700741CBC /* iOSDropDown.swift in Sources */,
 				C92EF41E26FC40D000741CBC /* AddNoteVc.swift in Sources */,
+				C9DB4FFE26FC9E1A00180861 /* NoteDetailCollectionCell.swift in Sources */,
 				C92EF42626FC6B5400741CBC /* HelperExtension.swift in Sources */,
 				C92EF42026FC4B2C00741CBC /* AddNoteImageCollectionCell.swift in Sources */,
 				C92EF41126FC392500741CBC /* HomeVc.swift in Sources */,

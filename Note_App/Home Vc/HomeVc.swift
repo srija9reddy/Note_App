@@ -75,7 +75,8 @@ extension HomeVc : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailVc") as! NoteDetailVc
-        
+        vc.noteData = self.allData[indexPath.row]
+        vc.index = indexPath.row
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
