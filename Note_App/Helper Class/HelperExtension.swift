@@ -39,6 +39,7 @@ extension UIViewController{
         print(dateFormatter.string(from: dateVar))
         return datee
     }
+    
     func saveData(input : [String:Any]) -> Bool{
 //        let noteName = input["name"]
 //        let noteImages : [UIImage] = input["images"] as! [UIImage]
@@ -98,3 +99,7 @@ extension UIViewController{
 }
 
 var appIndex = UserDefaults.standard.value(forKey: "index")
+
+struct dateTest {
+    let dateStr: String
+}

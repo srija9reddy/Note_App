@@ -51,7 +51,7 @@ class NoteDetailVc: UIViewController {
         let longgitude = noteData["longitude"] as? Double ?? 0.0
         let data = ["name":self.noteTitleTF.text!, "images":self.imagesArray, "description": self.descriptionTF.text!, "category": self.categoryTF.text!, "audioPath": self.noteData["audioPath"] as? String ?? "", "time": self.currentTimeInMilliSeconds(), "lattitude": lattitude, "longitude":longgitude] as! [String : Any]
         
-        let inndex = String(describing: ((UserDefaults.standard.value(forKey: "index") as? Int ?? 1) - (1)))
+        let inndex = String(describing: ((UserDefaults.standard.value(forKey: "index") as? Int ?? 0)))
         UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: data), forKey: inndex)
         self.showAlert(title: "Yeah", message: "Note Updated") { a in
             self.navigationController?.popViewController(animated: true)

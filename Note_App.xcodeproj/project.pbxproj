@@ -26,6 +26,7 @@
 		C9BCB16B26FC933800238511 /* NoteDetailVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCB16A26FC933800238511 /* NoteDetailVc.swift */; };
 		C9BCB16D26FC953F00238511 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BCB16C26FC953F00238511 /* Indicator.swift */; };
 		C9DB4FFE26FC9E1A00180861 /* NoteDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB4FFD26FC9E1A00180861 /* NoteDetailCollectionCell.swift */; };
+		C9DB500126FCEA8700180861 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DB500026FCEA8700180861 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C9BCB16A26FC933800238511 /* NoteDetailVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoteDetailVc.swift; path = "Note_App/Add Note/NoteDetailVc.swift"; sourceTree = SOURCE_ROOT; };
 		C9BCB16C26FC953F00238511 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		C9DB4FFD26FC9E1A00180861 /* NoteDetailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailCollectionCell.swift; sourceTree = "<group>"; };
+		C9DB500026FCEA8700180861 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		C92EF3DE26FC384100741CBC /* Note_App */ = {
 			isa = PBXGroup;
 			children = (
+				C9DB4FFF26FCEA3600180861 /* Model */,
 				C9BCB16926FC932200238511 /* Note Detail  */,
 				C92EF41C26FC40BD00741CBC /* Add Note */,
 				C92EF41226FC396600741CBC /* Helper Class */,
@@ -190,6 +193,14 @@
 				C9DB4FFD26FC9E1A00180861 /* NoteDetailCollectionCell.swift */,
 			);
 			path = "Note Detail ";
+			sourceTree = "<group>";
+		};
+		C9DB4FFF26FCEA3600180861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9DB500026FCEA8700180861 /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +346,7 @@
 				C92EF42626FC6B5400741CBC /* HelperExtension.swift in Sources */,
 				C92EF42026FC4B2C00741CBC /* AddNoteImageCollectionCell.swift in Sources */,
 				C92EF41126FC392500741CBC /* HomeVc.swift in Sources */,
+				C9DB500126FCEA8700180861 /* Model.swift in Sources */,
 				C92EF41426FC398100741CBC /* AnimatableView.swift in Sources */,
 				C9BCB16D26FC953F00238511 /* Indicator.swift in Sources */,
 				C92EF3E026FC384100741CBC /* AppDelegate.swift in Sources */,
